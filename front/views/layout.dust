@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="students">
+  <head>
+    <title>My App</title>
+    <link rel='stylesheet' href='/css/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.css">
+  </head>
+  <body>
+  <div class="container" ng-controller:"students">
+        <div class="row" ng-controller = "studinfo">
+            <div class ="col-md-offset-2 col-md-7">
+    {+body /}
+            </div>
+        </div>
+    </div>
+   <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+   <script src="/js/main.js"></script>
+   <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
+
+  </body>
+</html>

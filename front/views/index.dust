@@ -1,0 +1,101 @@
+{>"layout" /}
+{<body}
+<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#formModal">
+Add Student
+</button>
+
+<br />
+
+  {#students}
+  <div class ="well">
+  <h4>Student`s ID: {id}
+  <button class="btn btn-default colapsed pull-right" data-toggle="collapse" href="#info_{id}" aria-expanded="false"  aria-controls="info" >
+  <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+  </button>
+  </h4>
+<div class ="collapse" id ="info_{id}">
+     <h4>Student`s Name: {name}
+     <h4>Student`s Age: {age}
+     <h4>Student`s Group: {st_group}
+     <button class="btn btn-default edit-students pull-right" data-toggle="modal" data-target="#editformModal"
+     data-id="{id}"
+     data-name="{name}"
+     data-age="{age}"
+     data-group="{group}"
+     >
+     <span class="glyphicon glyphicon-edit" aria-hidden="true" ></span>
+     </button>
+     <button class="btn btn-danger delete-students pull-right" data-id={id}>
+
+     <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+     </button>
+</div>
+</div>
+
+  {/students}
+  <!-- Form 1-->
+  <div class="modal fade" id="editformModal" tabindex="-1" role="dialog" aria-labelledby="editformModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <form method="post" action ="/edit">
+        <input type="hidden" id="edit-form-id" name="id"/>
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Edit student</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+            <label>Student`s name</label>
+            <input type="text" class="form-control" name="name" id="edit-form-name"/>
+            </div>
+                      <div class="form-group">
+                      <label>Student`s age</label>
+                      <input type="text" class="form-control" name="age" id="edit-form-age" />
+                      </div>
+                                <div class="form-group">
+                                <label>Student`s group</label>
+                                 <input type="text" class="form-control" name="group"  id="edit-form-group"/>
+                                </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <input type="submit" class="btn btn-primary" value="Save changes" />
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+  <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      <form method="post" action ="/add">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Add Student</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+          <label>Student`s name</label>
+          <input type="text" class="form-control" name="name" />
+          </div>
+                    <div class="form-group">
+                    <label>Student`s age</label>
+                    <input type="text" class="form-control" name="age" />
+                    </div>
+                              <div class="form-group">
+                              <label>Student`s group</label>
+                               <input type="text" class="form-control" name="group" />
+                              </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <input type="submit" class="btn btn-primary" value="Add" />
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{/body}
